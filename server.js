@@ -63,7 +63,7 @@ app.get("*", function (request, response) {
   response.sendFile(path.resolve(currentDir, "./client/public", "index.html"));
 });
 
-const server = app.listen(process.env.PORT || 3010, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
   console.log(`WaCrm server is running on port ${process.env.PORT}`);
   init();
   setTimeout(() => {
