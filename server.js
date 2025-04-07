@@ -57,14 +57,14 @@ const path = require("path");
 
 const currentDir = process.cwd();
 
-app.use(express.static(path.resolve(currentDir, "./client/public")));
+app.use(express.static(path.resolve(currentDir, "./client/build")));
 
 
 // app.use(express.static(path.join(__dirname, "client", "public")));
 
 
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(currentDir, "./client/public", "index.html"));
+  response.sendFile(path.resolve(currentDir, "./client/build", "index.html"));
 });
 
 // app.get("*", function (req, res) {
