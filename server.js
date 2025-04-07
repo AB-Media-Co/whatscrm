@@ -57,19 +57,19 @@ const path = require("path");
 
 const currentDir = process.cwd();
 
-// app.use(express.static(path.resolve(currentDir, "./client/public")));
+app.use(express.static(path.resolve(currentDir, "./client/public")));
 
 
-app.use(express.static(path.join(__dirname, "client", "public")));
+// app.use(express.static(path.join(__dirname, "client", "public")));
 
 
-// app.get("*", function (request, response) {
-//   response.sendFile(path.resolve(currentDir, "./client/public", "index.html"));
-// });
-
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "client", "public", "index.html"));
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(currentDir, "./client/public", "index.html"));
 });
+
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "client", "public", "index.html"));
+// });
 
 
 const server = app.listen(process.env.PORT || 3000, () => {
